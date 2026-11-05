@@ -284,52 +284,75 @@ footer {
     }
 }
 
+/* SKILL FLOW - PANAH BERCABANG */
+
 .skill-flow {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin: 25px 0 30px;
 }
 
 .flow-title {
-  white-space: nowrap;
-  padding-top: 5px;
+    white-space: nowrap;
+    padding-top: 5px;
+    font-size: 15px;
+    color: var(--text);
 }
 
 .flow-list {
-  border-left: 2px solid #c2185b;
-  margin-left: 5px;
-  padding-left: 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  position: relative;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding-left: 50px;
+    margin-left: 5px;
+    border-left: none;
+}
+
+.flow-list::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: var(--magenta-light);
+    border-radius: 5px;
 }
 
 .flow-list div {
-  position: relative;
-  font-weight: 700;
-  color: #fff;
-  background: #3867d6;
-  width: fit-content;
+    position: relative;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
 }
 
 .flow-list div::before {
-  content: "";
-  position: absolute;
-  left: -50px;
-  top: 50%;
-  width: 40px;
-  border-top: 2px solid #c2185b;
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    width: 40px;
+    height: 2px;
+    background: var(--magenta-light);
 }
 
 .flow-list div::after {
-  content: "";
-  position: absolute;
-  left: -13px;
-  top: calc(50% - 5px);
-  width: 9px;
-  height: 9px;
-  border-top: 2px solid #c2185b;
-  border-right: 2px solid #c2185b;
-  transform: rotate(45deg);
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: calc(50% - 5px);
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid var(--magenta-light);
+    border-right: 2px solid var(--magenta-light);
+    transform: rotate(45deg);
+}
+
+@media (max-width: 600px) {
+    .skill-flow {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
