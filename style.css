@@ -284,3 +284,52 @@ footer {
     }
 }
 
+.skill-flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.flow-title {
+  white-space: nowrap;
+  padding-top: 5px;
+}
+
+.flow-list {
+  border-left: 2px solid #c2185b;
+  margin-left: 5px;
+  padding-left: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+}
+
+.flow-list div {
+  position: relative;
+  font-weight: 700;
+  color: #fff;
+  background: #3867d6;
+  width: fit-content;
+}
+
+.flow-list div::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  width: 40px;
+  border-top: 2px solid #c2185b;
+}
+
+.flow-list div::after {
+  content: "";
+  position: absolute;
+  left: -13px;
+  top: calc(50% - 5px);
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid #c2185b;
+  border-right: 2px solid #c2185b;
+  transform: rotate(45deg);
+}
