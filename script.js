@@ -1,43 +1,43 @@
-
-// MOBILE MENU
+// MOBILE NAVIGATION
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
+const navLinks = document.querySelectorAll(".nav-link");
 
-menuToggle.addEventListener("click", function () {
+menuToggle.addEventListener("click", () => {
     navMenu.classList.toggle("active");
-
-    if (navMenu.classList.contains("active")) {
-        menuToggle.textContent = "✕";
-    } else {
-        menuToggle.textContent = "☰";
-    }
 });
 
-// CLOSE MENU AFTER CLICKING A LINK
-const navLinks = document.querySelectorAll("#navMenu a");
-
-navLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
+// CLOSE MENU AFTER CLICK
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
         navMenu.classList.remove("active");
-        menuToggle.textContent = "☰";
     });
 });
 
-// SIMPLE SCROLL ANIMATION
-const sections = document.querySelectorAll(".section");
+// ACTIVE NAVIGATION ON SCROLL
+const sections = document.querySelectorAll("section[id]");
 
-const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
+            current = section.getAttribute("id");
         }
     });
-}, {
-    threshold: 0.1
+
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+        }
+    });
 });
 
-sections.forEach(function (section) {
-    observer.observe(section);
-});
-
-console.log("Welcome to my personal portfolio!");
