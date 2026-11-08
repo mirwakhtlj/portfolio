@@ -56,7 +56,7 @@ body {
 .nav-link {
     color: #ddd;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 14px;
     transition: 0.3s;
 }
 
@@ -102,16 +102,16 @@ body {
 
 .greeting {
     color: var(--magenta-light);
-    font-size: 15px;
+    font-size: 19px;
 }
 
 .intro {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 30px;
 }
 
 .hero h1 {
-    font-size: clamp(35px, 4vw, 55px);
+    font-size: clamp(32px, 3,5vw, 35px);
     line-height: 1.25;
     font-weight: 600;
     margin-bottom: 25px;
@@ -121,6 +121,7 @@ body {
     color: var(--muted);
     font-size: 15px;
     margin-bottom: 35px;
+    margin-left: 50px;
 }
 
 .primary-btn {
@@ -258,7 +259,7 @@ footer {
     }
 
     .nav-link {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .hero {
@@ -289,67 +290,67 @@ footer {
 .skill-flow {
     display: flex;
     align-items: flex-start;
-    gap: 15px;
+    gap: 30px;
     margin: 25px 0 30px;
 }
 
-.flow-title {
+.skill-intro {
     white-space: nowrap;
     padding-top: 5px;
-    font-size: 15px;
+    font-size: 18px;
     color: var(--text);
 }
 
-.flow-list {
+.skill-list {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 22px;
     padding-left: 50px;
     margin-left: 5px;
-    border-left: none;
 }
 
-.flow-list::before {
+.skill-list::before {
     content: "";
     position: absolute;
     left: 0;
     top: 10px;
     bottom: 10px;
-    width: 2px;
+    width: 3px;
     background: var(--magenta-light);
     border-radius: 5px;
 }
 
-.flow-list div {
+.skill-item {
     position: relative;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 18px;
     color: white;
 }
 
-.flow-list div::before {
+.skill-item::before {
     content: "";
     position: absolute;
     left: -50px;
     top: 50%;
     width: 40px;
-    height: 2px;
+    height: 3px;
     background: var(--magenta-light);
 }
 
-.flow-list div::after {
+.skill-item::after {
     content: "";
     position: absolute;
     left: -15px;
-    top: calc(50% - 5px);
-    width: 9px;
-    height: 9px;
-    border-top: 2px solid var(--magenta-light);
-    border-right: 2px solid var(--magenta-light);
+    top: calc(50% - 6px);
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid var(--magenta-light);
+    border-right: 3px solid var(--magenta-light);
     transform: rotate(45deg);
 }
 
+/* RESPONSIVE HP */
 @media (max-width: 600px) {
     .skill-flow {
         flex-direction: column;
