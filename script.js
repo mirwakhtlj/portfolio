@@ -41,3 +41,82 @@ window.addEventListener("scroll", () => {
     });
 });
 
+// EDUCATION EXPAND / COLLAPSE
+document.querySelectorAll('.education-card').forEach(card => {
+
+    const button = card.querySelector('.toggle-btn');
+
+    button.addEventListener('click', () => {
+
+        card.classList.toggle('active');
+
+        if (card.classList.contains('active')) {
+            button.innerHTML =
+                'Tutup detail & dokumentasi <span class="arrow">⌄</span>';
+        } else {
+            button.innerHTML =
+                'Lihat detail & dokumentasi <span class="arrow">⌄</span>';
+        }
+
+    });
+
+});
+
+
+
+// EXPERIENCE ACCORDION
+const experienceButtons = document.querySelectorAll('.experience-toggle');
+
+experienceButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        const currentCard = button.closest('.experience-card');
+
+        // Tutup semua kartu lainnya
+        document.querySelectorAll('.experience-card').forEach(card => {
+            if (card !== currentCard) {
+                card.classList.remove('active');
+            }
+        });
+
+        // Buka atau tutup kartu yang diklik
+        currentCard.classList.toggle('active');
+
+    });
+
+});
+
+// PUBLICATION DETAIL TOGGLE
+
+function togglePublication() {
+
+    const detail = document.getElementById("publication-detail");
+    const arrow = document.getElementById("publication-arrow");
+
+    detail.classList.toggle("active");
+
+    if (detail.classList.contains("active")) {
+        arrow.style.transform = "rotate(180deg)";
+    } else {
+        arrow.style.transform = "rotate(0deg)";
+    }
+
+}
+
+// PUBLICATION DETAIL TOGGLE
+
+function togglePublication() {
+
+    const detail = document.getElementById("publication-detail");
+    const arrow = document.getElementById("publication-arrow");
+
+    detail.classList.toggle("active");
+
+    if (detail.classList.contains("active")) {
+        arrow.style.transform = "rotate(180deg)";
+    } else {
+        arrow.style.transform = "rotate(0deg)";
+    }
+
+}
