@@ -120,3 +120,24 @@ function togglePublication() {
     }
 
 }
+
+// EDUCATION EXPAND / COLLAPSE
+document.querySelectorAll('.education-card').forEach(card => {
+
+    const button = card.querySelector('.toggle-btn');
+
+    button.addEventListener('click', () => {
+
+        card.classList.toggle('active');
+
+        if (card.classList.contains('active')) {
+            button.innerHTML =
+                'Tutup detail & dokumentasi <span class="arrow">⌄</span>';
+        } else {
+            button.innerHTML =
+                'Lihat detail & dokumentasi <span class="arrow">⌄</span>';
+        }
+
+    });
+
+});
