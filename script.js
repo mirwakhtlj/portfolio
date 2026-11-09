@@ -41,6 +41,7 @@ window.addEventListener("scroll", () => {
     });
 });
 
+
 // EDUCATION EXPAND / COLLAPSE
 document.querySelectorAll('.education-card').forEach(card => {
 

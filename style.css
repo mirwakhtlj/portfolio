@@ -154,7 +154,7 @@ body {
 
 .hero-image img,
 .hero img {
-    width: 100%;
+    width: 130%;
     height: 100%;
     max-width: none;
     object-fit: cover;
@@ -470,6 +470,20 @@ footer {
     line-height: 2;
 }
 
+
+.education-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.education-gallery img {
+    width: 120px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
 /* EXPERIENCE SECTION */
 .experience-container {
