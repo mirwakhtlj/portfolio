@@ -84,7 +84,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 13% 80px;
+    padding: 120px 10% 80px;
     position: relative;
     background:
         radial-gradient(
@@ -121,7 +121,8 @@ body {
     color: var(--muted);
     font-size: 15px;
     margin-bottom: 35px;
-    margin-left: 60px;
+    margin-left: 0;
+    max-width: 100%;
 }
 
 .primary-btn {
@@ -138,6 +139,18 @@ body {
 .primary-btn:hover {
     background: var(--magenta-light);
     transform: translateY(-3px);
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 650px;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* SECTIONS */
@@ -290,15 +303,13 @@ footer {
 .skill-flow {
     display: flex;
     align-items: flex-start;
-    gap: 30px;
+    gap: 25px;
     margin: 25px 0 30px;
 }
 
 .skill-intro {
     white-space: nowrap;
-    padding-top: 5px;
-    font-size: 18px;
-    color: var(--text);
+    font-size: 16px;
 }
 
 .skill-list {
@@ -316,16 +327,14 @@ footer {
     left: 0;
     top: 10px;
     bottom: 10px;
-    width: 3px;
+    width: 2px;
     background: var(--magenta-light);
-    border-radius: 5px;
 }
 
 .skill-item {
     position: relative;
     font-weight: 600;
-    font-size: 18px;
-    color: white;
+    font-size: 16px;
 }
 
 .skill-item::before {
@@ -334,7 +343,7 @@ footer {
     left: -50px;
     top: 50%;
     width: 40px;
-    height: 3px;
+    height: 2px;
     background: var(--magenta-light);
 }
 
@@ -343,10 +352,10 @@ footer {
     position: absolute;
     left: -15px;
     top: calc(50% - 6px);
-    width: 10px;
-    height: 10px;
-    border-top: 3px solid var(--magenta-light);
-    border-right: 3px solid var(--magenta-light);
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid var(--magenta-light);
+    border-right: 2px solid var(--magenta-light);
     transform: rotate(45deg);
 }
 
