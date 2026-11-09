@@ -81,11 +81,12 @@ body {
 
 /* HERO */
 .hero {
+    width: 100%;
     min-height: 100vh;
+    position: relative;
     display: flex;
     align-items: center;
-    padding: 120px 10% 80px;
-    position: relative;
+    padding: 120px 13% 80px;
     background:
         radial-gradient(
             ellipse at 75% 55%,
@@ -141,16 +142,36 @@ body {
     transform: translateY(-3px);
 }
 
+/* FOTO SEBAGAI BACKGROUND HERO */
 .hero-image {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    max-width: 650px;
+    height: 100%;
+    max-width: none;
+    z-index: 0;
 }
 
 .hero-image img {
-    display: block;
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* LAPISAN GELAP AGAR TEKS TERBACA */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+/* TEKS DI ATAS FOTO */
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 /* SECTIONS */
