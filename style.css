@@ -390,6 +390,93 @@ footer {
     }
 }
 
+
+/* =========================
+   ABOUT ME SECTION
+========================= */
+
+#about {
+    padding: 100px 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-header {
+    margin-bottom: 40px;
+}
+
+.about-header .section-label {
+    color: #a8c686;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.about-header h2 {
+    color: #d9e8c3;
+    font-size: 38px;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    color: #c5dba5;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.about-text h4 {
+    color: #e5bd83;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+.about-text p {
+    color: #d5dfca;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    #about {
+        padding: 70px 6%;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .about-header h2 {
+        font-size: 30px;
+    }
+
+    .about-text h3 {
+        font-size: 23px;
+    }
+}
+
 /* EDUCATION CARD */
 .education-card {
     width: 100%;

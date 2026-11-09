@@ -42,6 +42,48 @@ window.addEventListener("scroll", () => {
 });
 
 
+/* =========================
+   ABOUT ME - SCROLL REVEAL
+========================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const aboutSection = document.querySelector("#about");
+
+    if (!aboutSection) return;
+
+    const aboutElements = aboutSection.querySelectorAll(
+        ".about-header, .about-text"
+    );
+
+    aboutElements.forEach((element, index) => {
+        element.style.opacity = "0";
+        element.style.transform = "translateY(30px)";
+        element.style.transition =
+            `opacity 0.8s ease ${index * 0.2}s, 
+             transform 0.8s ease ${index * 0.2}s`;
+    });
+
+    const aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+
+                aboutElements.forEach(element => {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
+                });
+
+                aboutObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    aboutObserver.observe(aboutSection);
+
+});
+
 // EDUCATION EXPAND / COLLAPSE
 document.querySelectorAll('.education-card').forEach(card => {
 
